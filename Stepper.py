@@ -30,25 +30,25 @@ class StepperMove:
 
     def up(self, delay, steps):  
         for i in range(0, steps):
-            setStep(1, 0, 0, 0, delay)
-            setStep(1, 1, 0, 0, delay)
-            setStep(0, 1, 0, 0, delay)
-            setStep(0, 1, 1, 0, delay)
-            setStep(0, 0, 1, 0, delay)
-            setStep(0, 0, 1, 1, delay)
-            setStep(0, 0, 0, 1, delay)
-            setStep(1, 0, 0, 1, delay)
+            self.setStep(1, 0, 0, 0, delay)
+            self.setStep(1, 1, 0, 0, delay)
+            self.setStep(0, 1, 0, 0, delay)
+            self.setStep(0, 1, 1, 0, delay)
+            self.setStep(0, 0, 1, 0, delay)
+            self.setStep(0, 0, 1, 1, delay)
+            self.setStep(0, 0, 0, 1, delay)
+            self.setStep(1, 0, 0, 1, delay)
 
     def down(self, delay, steps):  
         for i in range(0, steps):
-            setStep(1, 0, 0, 1, delay)
-            setStep(0, 0, 0, 1, delay)
-            setStep(0, 0, 1, 1, delay)
-            setStep(0, 0, 1, 0, delay)
-            setStep(0, 1, 1, 0, delay)
-            setStep(0, 1, 0, 0, delay)
-            setStep(1, 1, 0, 0, delay)
-            setStep(1, 0, 0, 0, delay)
+            self.setStep(1, 0, 0, 1, delay)
+            self.setStep(0, 0, 0, 1, delay)
+            self.setStep(0, 0, 1, 1, delay)
+            self.setStep(0, 0, 1, 0, delay)
+            self.setStep(0, 1, 1, 0, delay)
+            self.setStep(0, 1, 0, 0, delay)
+            self.setStep(1, 1, 0, 0, delay)
+            self.setStep(1, 0, 0, 0, delay)
 
     def cleanup(self):
         setStep(0,0,0,0, 0.03)
