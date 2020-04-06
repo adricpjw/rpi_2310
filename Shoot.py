@@ -30,8 +30,6 @@ def up(delay, steps):
         setStep(0, 0, 1, 1, delay)
         setStep(0, 0, 0, 1, delay)
         setStep(1, 0, 0, 1, delay)
-#    setStep(0, 0, 0, 0)
-#    time.sleep(delay)
 
 def down(delay, steps):  
     for i in range(0, steps):
@@ -43,8 +41,7 @@ def down(delay, steps):
         setStep(0, 1, 0, 0, delay)
         setStep(1, 1, 0, 0, delay)
         setStep(1, 0, 0, 0, delay)
-#    setStep(0, 0, 0, 0)
-#    time.sleep(delay)
+
 
   
 def setStep(w1, w2, w3, w4, delay):
