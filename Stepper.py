@@ -21,6 +21,12 @@ class StepperMove:
     	GPIO.output(self.B1, 0)
     	GPIO.output(self.B2, 0)
 
+    def setStep(self, w1, w2, w3, w4, delay):
+        GPIO.output(self.A1, w1)
+        GPIO.output(self.A2, w2)
+        GPIO.output(self.B1, w3)
+        GPIO.output(self.B2, w4)
+        time.sleep(delay)
 
     def up(self, delay, steps):  
         for i in range(0, steps):
@@ -44,15 +50,6 @@ class StepperMove:
             setStep(1, 1, 0, 0, delay)
             setStep(1, 0, 0, 0, delay)
 
-
-  
-    def setStep(self, w1, w2, w3, w4, delay):
-        GPIO.output(self.A1, w1)
-        GPIO.output(self.A2, w2)
-        GPIO.output(self.B1, w3)
-        GPIO.output(self.B2, w4)
-        time.sleep(delay)
-    
     def cleanup(self):
         setStep(0,0,0,0, 0.03)
         GPIO.cleanup()
