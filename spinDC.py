@@ -3,29 +3,23 @@ import time
 
 GPIO.setmode(GPIO.BOARD)
 
-EN1 = 37
-In1 = 36
-In2 = 33
+class DCMove:
 
-GPIO.setup(EN1, GPIO.OUT)
-GPIO.setup(In1, GPIO.OUT)
-GPIO.setup(In2, GPIO.OUT)
+  def __init__(self,EN1,In1,In2):
+    self.EN1 = EN1
+    self.In1 = In1
+    self.In2 = In2
 
-GPIO.output(EN1, 0)
-GPIO.output(In1, 1)
-GPIO.output(In2, 0)
+    GPIO.setup(EN1, GPIO.OUT)
+    GPIO.setup(In1, GPIO.OUT)
+    GPIO.setup(In2, GPIO.OUT)
 
-def turnOn():
-  GPIO.output(EN1, 1)
+    GPIO.output(EN1, 0)
+    GPIO.output(In1, 1)
+    GPIO.output(In2, 0)
 
-def turnOff():
-  GPIO.output(EN1, 0)
+  def turnOn(self):
+    GPIO.output(EN1, 1)
 
-try:
-  turnOn()
-  time.sleep(5)
-  turnOff()
-except KeyboardInterrupt:
-  GPIO.cleanup()
-
-GPIO.cleanup()
+  def turnOff(self):
+    GPIO.output(EN1, 0)
