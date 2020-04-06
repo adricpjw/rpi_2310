@@ -51,7 +51,7 @@ class StepperMove:
             self.setStep(1, 0, 0, 0, delay)
 
     def cleanup(self):
-        setStep(0,0,0,0, 0.03)
+        self.setStep(0,0,0,0, 0.03)
         GPIO.cleanup()
 
 
