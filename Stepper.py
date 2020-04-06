@@ -3,7 +3,7 @@ import time
 
 GPIO.setmode(GPIO.BOARD)
 
-class StepperMove():
+class StepperMove:
 
     def __init__(self,A1,A2,B1,B2):
         self.A1 = A1
@@ -11,15 +11,15 @@ class StepperMove():
         self.B1 = B1
         self.B2 = B2
 
-    GPIO.setup(self.A1, GPIO.OUT)
-    GPIO.setup(self.A2, GPIO.OUT)
-    GPIO.setup(self.B1, GPIO.OUT)
-    GPIO.setup(self.B2, GPIO.OUT)
+    	GPIO.setup(self.A1, GPIO.OUT)
+    	GPIO.setup(self.A2, GPIO.OUT)
+    	GPIO.setup(self.B1, GPIO.OUT)
+    	GPIO.setup(self.B2, GPIO.OUT)
 
-    GPIO.output(self.A1, 0)
-    GPIO.output(self.A2, 0)
-    GPIO.output(self.B1, 0)
-    GPIO.output(self.B2, 0)
+    	GPIO.output(self.A1, 0)
+    	GPIO.output(self.A2, 0)
+    	GPIO.output(self.B1, 0)
+    	GPIO.output(self.B2, 0)
 
 
     def up(self, delay, steps):  
