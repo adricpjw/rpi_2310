@@ -10,10 +10,10 @@ from std_msgs.msg import String
 GPIO.setmode(GPIO.BOARD)
 
 #stepper motor
-A1 =13 
-A2 =11
-B1 =15
-B2 =12
+A1 = 13 
+A2 = 11
+B1 = 15
+B2 = 12
 
 servo_pin = 22
 

@@ -12,18 +12,10 @@ class servoMove:
     def act(self):
         pwm = GPIO.PWM(pin,50)
         pwm.start(0)
-        pwm.ChangeDutyCycle(7)
-        time.sleep(5)
+        pwm.ChangeDutyCycle(12)
+        time.sleep(3)
         pwm.ChangeDutyCycle(2)
         
     def cleanup(self):
         GPIO.cleanup()
 
-#sero
-servo_point = 22
-GPIO.setup(servo_point,GPIO.OUT)
-pwm = GPIO.PWM(servo_point,50)
-pwm.start(0)
-pwm.ChangeDutyCycle(7)
-time.sleep(5)
-pwm.ChangeDutyCycle(2)

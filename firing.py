@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+z#!/usr/bin/env python
 import RPi.GPIO as GPIO    
 import time
 from Stepper import StepperMove
@@ -9,14 +9,16 @@ from std_msgs.msg import String
 
 GPIO.setmode(GPIO.BOARD)
 
-#stepper motor
+# stepper motor GPIO Pins
 A1 =13 
 A2 =11
 B1 =15
 B2 =12
 
-servo_pin = 22
+# servo GPIO Pin
+servo_pin = 29
 
+# L293D GPIO Pins
 EN1 = 37
 In1 = 33
 In2 = 36
@@ -28,13 +30,14 @@ spinner = DCMove(EN1,In1,In2)
 val = ''
 
 def getSignal(msg):
-    global val = msg
+    global val
+    val = msg.data
 
-
+# Stepper movement up or down depending on camera feed 
 def move(signal):
-    if signal == '-1':
+    if signal.data == '-1':
         mover.down(0.03,2)
-    elif signal == '1':
+    elif signal.data == '1':
         mover.up(0.03,2)
 
 
@@ -42,18 +45,18 @@ def main():
     global val
     rospy.init_node('aimingNode',anonymous = True)
 
-    rospy.Subscriber('cmd_stepper',String,getSignal)
+    rospy.Subscriber('cmd_stepper',String,getSignal) #cmd_stepper published by targeting.py
     rate = rospy.Rate(10)
-
+    
     toggle = True
     
     while toggle:
-        if val != '10' and val:
-            move(val)
-        elif val == '10':
-            spinner.turnOn()
-            time.sleep(2)
-            servo.act()
+        if val != '10' and val: 
+            move(val) 
+        elif val == '10': # If payload is angled correctly
+            spinner.turnOn() # Turn on DC motors
+            time.sleep(3) # Wait 3 seconds for DC Motors to full speed
+            servo.act() # Use servos to push ball
             time.sleep(3)
             toggle = False
             GPIO.cleanup()
