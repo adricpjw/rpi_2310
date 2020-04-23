@@ -8,9 +8,9 @@
 
 - Tested and ran on ROS1 Kinetic
 
-**Identification**
+**Shooting**
 
-![Identification Demo](http://g.recordit.co/2K4EPKrPUP.gif)
+![shooting](firing.gif)
 
 **Firing Mechanism**
 
