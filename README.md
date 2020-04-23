@@ -13,6 +13,7 @@
 ![Identification Demo](http://g.recordit.co/2K4EPKrPUP.gif)
 
 **Firing Mechanism**
+
 ![servo move](servo.gif)
 
 ---
