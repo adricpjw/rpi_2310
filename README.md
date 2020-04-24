@@ -38,6 +38,10 @@
 $ cd ~/catkin_ws && catkin_make
 ```
 
+- Circuit setup:
+
+![](https://i.imgur.com/TiS5Gla.png)
+
 ### Dependant Packages
 
 **Follow the installation guide from :**
