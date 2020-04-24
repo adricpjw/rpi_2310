@@ -95,6 +95,19 @@ pi@raspberrypi: /rpi_2310$ python firing.py
     - Simply call this class with two different set of pins
     - Eg. `DC1 = DCMove(EN1,In1,In2)` and `DC2 = DCMove(EN2,In3,In4)`
 
+### Example Output:
+
+Below is an example output when running the firing script in conjunction with the targeting script from [here](https://github.com/adricpjw/eg2310_nav)
+```shell
+pi@raspberrypi: /rpi_2310$ python firing.py
+Stepper moving up
+Stepper moving up
+Stepper moving up
+Stepper moving up
+Stepper moving up
+Calibration done! Firing
+pi@raspberrypi: /rpi_2310$
+```
 ---
 
 

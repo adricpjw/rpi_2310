@@ -12,9 +12,9 @@ class servoMove:
     def act(self):
         pwm = GPIO.PWM(pin,50)
         pwm.start(0)
-        pwm.ChangeDutyCycle(12)
+        pwm.ChangeDutyCycle(12) #Turn 180 degrees
         time.sleep(3)
-        pwm.ChangeDutyCycle(2)
+        pwm.ChangeDutyCycle(2) #Turn back
         
     def cleanup(self):
         GPIO.cleanup()
